@@ -43,8 +43,9 @@ export default function AppFunctional(props) {
   }
 
   const getXYMessage = () => {
-    const coordinates = getXY()
-    return `${coordinates[0]} , ${coordinates[1]}`
+    const position = getXY()
+    return `${position[0]} , ${position[1]}`
+    // return /\(position[0].*position[1]\)$/
   }
 
   const reset = () => {
@@ -58,9 +59,9 @@ export default function AppFunctional(props) {
     const down = state.down
     const index = state.currentIndex
     const newMove = state.currentMoves
-    const coordinates = getXY()
-    const xPosition = coordinates[0]
-    const yPosition = coordinates[1]
+    const position = getXY()
+    const xPosition = position[0]
+    const yPosition = position[1]
 
     if (direction === left && xPosition > 1) {
       return setState({
@@ -159,7 +160,7 @@ export default function AppFunctional(props) {
   return (
     <div id="wrapper" className={props.className}>
       <div className="info">
-          <h3 id="coordinates">Coordinates ({getXYMessage()}) </h3>
+          <h3 id="coordinates">Coordinates ({getXYMessage()})</h3>
           {
             (state.currentMoves === 1) ? <h3 id="steps">You moved {state.currentMoves} time</h3>
               : <h3 id="steps">You moved {state.currentMoves} times</h3>

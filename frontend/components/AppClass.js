@@ -161,7 +161,7 @@ export default class AppClass extends React.Component {
     return (
       <div id="wrapper" className={className}>
         <div className="info">
-          <h3 id="coordinates">Coordinates ({this.getXYMessage()}) </h3>
+          <h3 id="coordinates">Coordinates({this.getXYMessage()})</h3>
           {
             (this.state.currentMoves === 1) ? <h3 id="steps">You moved {this.state.currentMoves} time</h3>
               : <h3 id="steps">You moved {this.state.currentMoves} times</h3>
